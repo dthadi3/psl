@@ -9,3 +9,16 @@ node_js:
 env:
   - secure: "PORxLVNPhDtEmtY2ykpjKULyV6hR2lZIgM4frKxbwXaGf+0nvSvKEj8CdaEr9yIMm9gS1/BQjGRydtvTkkey9Ri5c6Fx0Ckj+TW2VkAmlEODxFf1buyqNYHPZezRAeANg+kqItO8g1RHtuis0fRyxNITgm7R8919KcsFluBl7Iw="
 script: ./scripts/ci-build.sh
+Before_script:
+  - |
+   if [[ "$TRAVIS_CPU_ARCH" == "ppc64le" ]]; then
+     sudo apt-get update -y
+     sudo apt-get install build-essential chrpath libssl-dev libxft-dev libfreetype6-dev libfreetype6 libfontconfig1-dev libfontconfig1 -y
+     cd ~
+     sudo wget https://github.com/Medium/phantomjs/archive/2.1.14.tar.gz
+     sudo tar xvjf 2.1.14.tar.gz
+     sudo mv 2.1.14 phantomjs_2.1.14
+     sudo mv phantomjs_2.1.14 /usr/local/share  
+     sudo ln -sf /usr/local/share/phantomjs_2.1.14/bin/phantomjs /usr/local/bin
+     phantomjs --version
+   fi
