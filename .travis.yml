@@ -12,7 +12,7 @@ script: ./scripts/ci-build.sh
 before_install:
   - |
    if [[ "$TRAVIS_CPU_ARCH" == "ppc64le" ]]; then
-     sudo npm install es6-promise
+     npm install es6-promise
      sudo apt-get update -y
      sudo apt-get install build-essential chrpath libssl-dev libxft-dev libfreetype6-dev libfreetype6 libfontconfig1-dev libfontconfig1 -y
      cd ~
