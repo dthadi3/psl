@@ -17,7 +17,7 @@ before_install:
      cd ~
      sudo wget https://github.com/Medium/phantomjs/archive/2.1.14.tar.gz
      sudo tar xvf 2.1.14.tar.gz
-     sudo mv phantomjs_2.1.14 /usr/local/share  
-     sudo ln -sf /usr/local/share/phantomjs_2.1.14/bin/phantomjs /usr/local/bin
+     sudo mv phantomjs-2.1.14 /usr/local/share  
+     sudo ln -sf /usr/local/share/phantomjs-2.1.14/bin/phantomjs /usr/local/bin
      phantomjs --version
    fi
