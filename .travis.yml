@@ -9,7 +9,7 @@ node_js:
 env:
   - secure: "PORxLVNPhDtEmtY2ykpjKULyV6hR2lZIgM4frKxbwXaGf+0nvSvKEj8CdaEr9yIMm9gS1/BQjGRydtvTkkey9Ri5c6Fx0Ckj+TW2VkAmlEODxFf1buyqNYHPZezRAeANg+kqItO8g1RHtuis0fRyxNITgm7R8919KcsFluBl7Iw="
 script: ./scripts/ci-build.sh
-Before_script:
+before_install:
   - |
    if [[ "$TRAVIS_CPU_ARCH" == "ppc64le" ]]; then
      sudo apt-get update -y
