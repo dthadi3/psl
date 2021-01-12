@@ -1,10 +1,10 @@
 arch:
-  - amd64
+        #  - amd64
   - ppc64le
 language: node_js
 node_js:
-  - 8
-  - 10
+        #  - 8
+        #  - 10
   - 12
 env:
   - secure: "PORxLVNPhDtEmtY2ykpjKULyV6hR2lZIgM4frKxbwXaGf+0nvSvKEj8CdaEr9yIMm9gS1/BQjGRydtvTkkey9Ri5c6Fx0Ckj+TW2VkAmlEODxFf1buyqNYHPZezRAeANg+kqItO8g1RHtuis0fRyxNITgm7R8919KcsFluBl7Iw="
@@ -12,6 +12,7 @@ script: ./scripts/ci-build.sh
 before_install:
   - |
    if [[ "$TRAVIS_CPU_ARCH" == "ppc64le" ]]; then
+     sudo npm install es6-promise
      sudo apt-get update -y
      sudo apt-get install build-essential chrpath libssl-dev libxft-dev libfreetype6-dev libfreetype6 libfontconfig1-dev libfontconfig1 -y
      cd ~
