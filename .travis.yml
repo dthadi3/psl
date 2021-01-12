@@ -16,7 +16,7 @@ before_install:
      sudo apt-get install build-essential chrpath libssl-dev libxft-dev libfreetype6-dev libfreetype6 libfontconfig1-dev libfontconfig1 -y
      cd ~
      sudo wget https://github.com/Medium/phantomjs/archive/2.1.14.tar.gz
-     sudo tar xvjf 2.1.14.tar.gz
+     sudo tar xvf 2.1.14.tar.gz
      sudo mv 2.1.14 phantomjs_2.1.14
      sudo mv phantomjs_2.1.14 /usr/local/share  
      sudo ln -sf /usr/local/share/phantomjs_2.1.14/bin/phantomjs /usr/local/bin
